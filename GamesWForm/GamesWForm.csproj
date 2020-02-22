@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCD1D57B-3D84-433B-8B91-4842A42ACB53}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GamesWForm</RootNamespace>
+    <AssemblyName>GamesWForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddNewGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewGameForm.Designer.cs">
+      <DependentUpon>AddNewGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewTypeForm.Designer.cs">
+      <DependentUpon>AddNewTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewYearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewYearForm.Designer.cs">
+      <DependentUpon>AddNewYearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\MigrationConfig.cs" />
+    <Compile Include="Context\OyunlarContext.cs" />
+    <Compile Include="DeleteGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteGameForm.Designer.cs">
+      <DependentUpon>DeleteGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteTypeForm.Designer.cs">
+      <DependentUpon>DeleteTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteYearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteYearForm.Designer.cs">
+      <DependentUpon>DeleteYearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Oyun.cs" />
+    <Compile Include="Entities\OyunTur.cs" />
+    <Compile Include="Entities\Tur.cs" />
+    <Compile Include="Entities\Yil.cs" />
+    <Compile Include="OyunlarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OyunlarForm.Designer.cs">
+      <DependentUpon>OyunlarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\FormManager.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\OyunlarService.cs" />
+    <Compile Include="Services\TurService.cs" />
+    <Compile Include="Services\YillarService.cs" />
+    <Compile Include="UpdateGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateGameForm.Designer.cs">
+      <DependentUpon>UpdateGameForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewGameForm.resx">
+      <DependentUpon>AddNewGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewTypeForm.resx">
+      <DependentUpon>AddNewTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewYearForm.resx">
+      <DependentUpon>AddNewYearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteGameForm.resx">
+      <DependentUpon>DeleteGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteTypeForm.resx">
+      <DependentUpon>DeleteTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteYearForm.resx">
+      <DependentUpon>DeleteYearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OyunlarForm.resx">
+      <DependentUpon>OyunlarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UpdateGameForm.resx">
+      <DependentUpon>UpdateGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
